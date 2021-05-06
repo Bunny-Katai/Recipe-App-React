@@ -1,16 +1,20 @@
 import React from 'react'
-import { Segment, Image, Button, Grid, Container} from 'semantic-ui-react'
+import { Segment, Image, Button, Grid, Container, Stylesheet} from 'semantic-ui-react'
 
 export default function Home() {
     return (
         <div className='HomeContainer'>
-                <div className='HeroContainer'>
-                     <Image src="images/MassamanCurry.jpg" alt="Sweet Sticky Rice and Mango" width='100%' height='70%'/>    
+                <div className="HeroBox">
+                    <div className='HeroContainer'>
+                        <Image src="images/MassamanCurry.png" alt="Massaman Curry" width='40%' height='25%' style={{ borderBottomLeftRadius: 0 , borderBottomRightRadius: 0}} />    
+                    </div>
                 </div>
-                <div className='BottomContainer'>
-                    <Button className = 'Welcome' color='yellow' size='huge'>Welcome</Button>       
-                    <h1>Ready to cook delicious Thai food!</h1>
-                    <Button className = 'Start' color='yellow' size='huge'>Start</Button> 
+                <div className="BottomBox">
+                    <div className='BottomContainer'>
+                        <div className = 'Welcome'>Welcome</div>       
+                        <h1>Ready to cook delicious Thai food!</h1>
+                        <Button className = 'Start' color='yellow' size='huge'>Start</Button> 
+                    </div>
                 </div>
                 
         </div>
