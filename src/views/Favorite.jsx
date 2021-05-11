@@ -5,7 +5,7 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 export default function Favorite() {
     return (
         <Card>
-      <Image src="images/MassamanCurry.jpg" alt="Massaman Curry" size='medium' />
+          <Image src="images/MassamanCurry.jpg" alt="Massaman Curry" size='medium' />
         <Card.Content>
           <Card.Header>Massaman Curry</Card.Header>
           <Card.Description>
