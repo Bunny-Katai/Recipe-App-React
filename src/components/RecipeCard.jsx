@@ -7,7 +7,7 @@ const RecipeCard =({title,image, url}) => {
      
       <div className='RecipeContainer'>
        <Card>
-            <Image src={image} alt="recipe card" size='medium' />
+            <Image src={image} alt="recipecard" size='medium' />
           <Card.Content>
             <Card.Header>{title}</Card.Header>
           </Card.Content>
