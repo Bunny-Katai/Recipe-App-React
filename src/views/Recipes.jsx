@@ -1,89 +1,54 @@
 
-import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import React, { useEffect, useState } from 'react';
+import RecipeCard from '../components/RecipeCard';
 
 
-const Recipes = () => (
 
-  <Card.Group>
-    <Card>
-      <Image src="images/MassamanCurry.jpg" alt="Massaman Curry" size='medium' />
-        <Card.Content>
-          <Card.Header>Massaman Curry</Card.Header>
-          <Card.Description>
-            Famous Thai Curry
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name='like' />
-          </a>
-        </Card.Content>
-    </Card>
+const Recipe = ()  => {
+  const APP_ID = "7eb16d6b";
+  const APP_KEY= "b0591ba0693bd241bd0db73d50b41ae8";
 
-    <Card>
-      <Image src="images/mango.jpg" alt="Sweet Sticky Rice and Mango" size='medium' />
-        <Card.Content>
-          <Card.Header>Massaman Curry</Card.Header>
-          <Card.Description>
-            Famous Thai Curry
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name='like' />
-          </a>
-        </Card.Content>
-    </Card>
+  const [recipes, setRecipes] = useState([]);
+  
+  useEffect ( () => { 
+    getRecipes();
+    getSpecificRecipe();
+  }, []);
 
-    <Card>
-      <Image src="images/kapraw.jpg" alt="Pad Kapraw" size='medium' />
-        <Card.Content>
-          <Card.Header>Massaman Curry</Card.Header>
-          <Card.Description>
-            Famous Thai Curry
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name='like' />
-          </a>
-        </Card.Content>
-    </Card>
+  const getRecipes = async () => {
+    const response = await fetch(`https://api.edamam.com/search?q=thai&app_id=${APP_ID}&app_key=${APP_KEY}`
+    );
 
-    <Card>
-      <Image src="images/tomkha.jpg" alt="Coconut Soup(Tom Kha Kai)" size='medium' />
-        <Card.Content>
-          <Card.Header>Massaman Curry</Card.Header>
-          <Card.Description>
-            Famous Thai Curry
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name='like' />
-          </a>
-        </Card.Content>
-    </Card>
+    const data = await response.json();
+    setRecipes(data.hits);
+    console.log(data.hits);
+    
+  };  
 
+  const getSpecificRecipe = async () => {
+    const response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${APP_KEY}&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408`)
 
-    <Card>
-      <Image src="images/padthai.jpg" alt="Pad Thai" size='medium' />
-        <Card.Content>
-          <Card.Header>Massaman Curry</Card.Header>
-          <Card.Description>
-            Famous Thai Curry
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name='like' />
-          </a>
-        </Card.Content>
-    </Card>
+    const data = await response.json();
+    console.log(data)
+  }
 
+  
+      
+  return (
+    <div className="RecipePage">
+      
+      {recipes.map(recipe => (
+        <RecipeCard 
+        key={recipe.recipe.label}
+        title={recipe.recipe.label} 
+        image = {recipe.recipe.image}/>
+        
+        
+      ))};
+      
+    </div>
+    
+  )
+}
 
-  </Card.Group>
-)
-
-export default Recipes
+export default Recipe;
