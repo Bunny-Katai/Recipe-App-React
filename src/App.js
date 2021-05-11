@@ -27,7 +27,7 @@ function App() {
         <Route exact path='/recipes'>
           <Recipes />
         </Route>
-        <Route path='/recipes/:id'>{ SingleRecipe }
+        <Route path='/recipes/:uri'> <SingleRecipe/>
         </Route>
         <Route path='/favorite'>
           <Favorite />
