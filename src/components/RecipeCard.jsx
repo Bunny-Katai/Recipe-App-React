@@ -1,8 +1,10 @@
 import Reac from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Icon, Image, Button} from 'semantic-ui-react'
+import { useGlobalContext } from '../data/GlobalContext'
 
-const RecipeCard =({title,image, url}) => {
+const RecipeCard =({title,image, recipe}) => {
+const {favorites, toggleFavorite } = useGlobalContext();
     return (
      
       <div className='RecipeContainer'>
@@ -13,9 +15,9 @@ const RecipeCard =({title,image, url}) => {
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Icon name='like' />
+              <Icon onClick={()=>toggleFavorite(recipe.uri)} name='like' color={favorites.includes(recipe.uri)?'pink': 'grey'} />
             </a>
-            <Button floated='right'><Link to='recipes' className='RecipeButton'>Recipe</Link></Button>
+            <Button floated='right'><Link to={`recipes/${btoa(recipe.uri)}`} className='RecipeButton'>Recipe</Link></Button>
           </Card.Content>
       </Card>
       </div>
