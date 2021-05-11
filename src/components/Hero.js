@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <div className='HomeContainer'>
                 <div className='HeroContainer'>
-                     <Image src="images/MassamanCurry.jpg" alt="Sweet Sticky Rice and Mango" width='100%' height='70%'/>    
+                     <Image src="images/MassamanCurry.jpg" alt="Massaman Curry" width='100%' height='70%'/>    
                 </div>
                 <div className='BottomContainer'>
                     <Button className = 'Welcome' color='yellow' size='huge'>Welcome</Button>       
