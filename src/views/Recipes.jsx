@@ -18,8 +18,9 @@ const Recipe = ()  => {
   const getRecipes = async () => {
     const response = await fetch(`https://api.edamam.com/search?q=thai&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-
+    
     const data = await response.json();
+      console.log(data.hits)
     setRecipes(data.hits);
     console.log(data.hits);
     
@@ -39,9 +40,11 @@ const Recipe = ()  => {
       
       {recipes.map(recipe => (
         <RecipeCard 
-        key={recipe.recipe.label}
+        recipe = {recipe.recipe}
+        key={recipe.recipe.uri}
         title={recipe.recipe.label} 
         image = {recipe.recipe.image}/>
+
         
         
       ))};
