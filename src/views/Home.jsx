@@ -1,5 +1,6 @@
-import React from 'react'
-import { Segment, Image, Button, Grid, Container, Stylesheet} from 'semantic-ui-react'
+import React from 'react';
+import { Segment, Image, Button, Grid, Container, Stylesheet} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -12,8 +13,8 @@ export default function Home() {
                 <div className="BottomBox">
                     <div className='BottomContainer'>
                         <div className = 'Welcome'>Welcome</div>       
-                        <h1>Ready to cook delicious Thai food!</h1>
-                        <Button className = 'Start' color='yellow' size='huge'>Start</Button> 
+                        <div className='Ready'>Ready to cook delicious Thai food!</div>
+                        <Button><Link to='recipes' className='HomeButton'>Start</Link></Button>
                     </div>
                 </div>
                 
