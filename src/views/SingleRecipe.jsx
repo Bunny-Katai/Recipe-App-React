@@ -1,5 +1,8 @@
 import React, { useState, useEffect} from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import '../../src/App.css';
+
+
 
 
 export default function SingleRecipe() {
@@ -9,21 +12,38 @@ export default function SingleRecipe() {
     const [recipe, setRecipe] = useState({});
     useEffect ( () => { 
         getSpecificRecipe();
-      }, [uri]); 
+      }, [uri]);
     
       const getSpecificRecipe = async () => {
-        const stringUri = atob(uri);
-        console.log('stringUri', stringUri);
+        const stringUri = encodeURIComponent(atob(uri));
         const response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${APP_KEY}&r=${stringUri}`);
         
         const data = await response.json();
-        setRecipe(data)
-        console.log(data)
+        setRecipe(data[0])
+        console.log(data[0])
       }
 
+     
+
+
     return (
-        <div>
-         <pre>{JSON.stringify(recipe, null, 2)}</pre>   
+        <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
+            <div className="card text-center" style={{ height:"100%"}}>
+                <div className="card-header text-capitalize">
+                <h2>{recipe.label}</h2>
+                </div>
+                  <img src={recipe.image} style={{height: "25rem"}}
+                    className="img-card-top" alt="recipe"/>
+                </div>
+                <div className="card-body text-capitalize text-center">
+                  <h3>By {recipe.source}</h3>
+                  <a href={recipe.url}
+                     target="-blank"
+                     rel="noopener noreferrer"
+                     className="btn btn-dark mt-2 mx-2"
+                     >View Recipe Link </a>
+                </div>
+              
         </div>
     )
       
