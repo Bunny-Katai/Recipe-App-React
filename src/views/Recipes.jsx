@@ -43,10 +43,8 @@ const Recipe = ()  => {
         recipe = {recipe.recipe}
         key={recipe.recipe.uri}
         title={recipe.recipe.label} 
-        image = {recipe.recipe.image}/>
-
-        
-        
+        image = {recipe.recipe.image}/> 
+  
       ))};
       
     </div>
