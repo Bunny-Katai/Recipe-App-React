@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter} from 'react-router-dom'
 import { GlobalContextProvider} from './data/GlobalContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <GlobalContextProvider>
