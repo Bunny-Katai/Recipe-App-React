@@ -20,12 +20,9 @@ body {
 h1 {
   color: white;
 }
-.HomeContainer {
-  display: flex;
-  flex-direction: column;
-}
+
 .HeroBox {
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,89,1) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgb(0, 9, 12) 0%, rgb(6, 145, 105) 35%, rgb(92, 211, 235) 100%);
 }
 .HeroContainer {
   display: flex;
@@ -34,11 +31,11 @@ h1 {
   padding-bottom: 50px;
   border-bottom-left-radius: 200px;
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,1,15,1) 48%, rgba(127,127,131,1) 83%);
+  background: linear-gradient(90deg, rgb(5, 5, 5) 0%, rgb(25, 27, 27) 48%, rgb(107, 109, 109) 83%);
 }
 .BottomBox {
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,1,15,1) 48%, rgba(127,127,131,1) 83%);
+  background: linear-gradient(90deg, rgb(5, 5, 5) 0%, rgb(25, 27, 27) 48%, rgb(107, 109, 109) 83%);
 }
 .BottomContainer {
   display: flex;
@@ -49,7 +46,7 @@ h1 {
   padding-top: 100px;
   border-top-right-radius: 200px;
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,89,1) 35%, rgba(0,212,255,1) 100%); 
+  background: linear-gradient(90deg, rgb(0, 9, 12) 0%, rgb(6, 145, 105) 35%, rgb(92, 211, 235) 100%); 
 }
 .Welcome {
   color: white;
@@ -73,21 +70,23 @@ h1 {
   justify-content: center;    
 }
 .RecipeContainer {
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,89,1) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgb(112, 110, 110) 0%, rgb(245, 248, 247) 35%, rgb(240, 241, 241) 100%);
   width: 100%;
-  display: flex;
-  justify-content: center;  
+  
+   
 }
 .headerLetter {
   color: black;
   margin-left: 100px;
   margin-bottom: 100px;
 }
-.navbar  {
-  display: flex;
-  height: 20%;
-}
 
+.FavoriteContainer {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 
 
