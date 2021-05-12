@@ -8,7 +8,7 @@ const {favorites, toggleFavorite } = useGlobalContext();
     return (
      
       <div className='RecipeContainer'>
-       <Card>
+       <Card className='col-10 mx-auto col-md-6 col-lg-4 my-3' >
             <Image src={image} alt="recipe card" size='medium' />
           <Card.Content>
             <Card.Header>{title}</Card.Header>
@@ -17,7 +17,7 @@ const {favorites, toggleFavorite } = useGlobalContext();
             <a>
               <Icon onClick={()=>toggleFavorite(recipe.uri)} name='like' color={favorites.includes(recipe.uri)?'pink': 'grey'} />
             </a>
-            <Button floated='right'><Link to={`recipes/${btoa(recipe.uri)}`} className='RecipeButton'>Recipe</Link></Button>
+            <Button floated='right'><Link to={`recipes/${btoa(recipe.uri)}`} className='RecipeButton'>View Detail</Link></Button>
           </Card.Content>
       </Card>
       </div>
